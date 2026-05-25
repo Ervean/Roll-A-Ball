@@ -10,12 +10,15 @@ namespace Camera
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            offset = transform.position - player.transform.position;   
+            offset = transform.position - player.transform.position;
         }
 
         private void LateUpdate()
         {
-            transform.position = player.transform.position + offset;
+            if (player != null)
+            {
+                transform.position = player.transform.position + offset;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Player
         public float Speed = 10f;
         private Rigidbody rb;
         private float movementX;
-        private float movementY;
+        private float movementY; 
         private int count;
 
         private const int MaxPickUp = 7;
@@ -43,6 +43,17 @@ namespace Player
                 SetCountText();
             }
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(gameObject);
+                winText.gameObject.SetActive(true);
+                winText.text = "You Lose!";
+            }
+        }
+
 
         private void OnMove (InputValue movementValue)
         {
