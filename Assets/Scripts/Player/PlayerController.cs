@@ -19,6 +19,8 @@ namespace Player
         public float Speed = 10f;
 
         public float JumpForce = 100f;
+
+        public float VelocityCap = .5f;
 #endregion
 
         private Collider c;
@@ -52,6 +54,8 @@ namespace Player
         private void FixedUpdate()
         {
             Vector3 movement = new Vector3(movementX, 0, movementY);
+            movement.x = movement.x >= VelocityCap ? VelocityCap : movement.x;
+            movement.z = movement.z >= VelocityCap ? VelocityCap : movement.z; 
             rb.AddForce(movement * Speed);
 
 

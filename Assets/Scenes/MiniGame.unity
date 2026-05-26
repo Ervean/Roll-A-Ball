@@ -536,7 +536,8 @@ MonoBehaviour:
   countText: {fileID: 2104912381}
   winText: {fileID: 385299222}
   Speed: 10
-  JumpForce: 500
+  JumpForce: 250
+  VelocityCap: 0.5
 --- !u!114 &251909969
 MonoBehaviour:
   m_ObjectHideFlags: 0
