@@ -69,6 +69,7 @@ namespace Player
             if(count >= MaxPickUp)
             {
                 winText.gameObject.SetActive(true);
+                Destroy(GameObject.FindGameObjectWithTag("Enemy"));
             }
         }
     
